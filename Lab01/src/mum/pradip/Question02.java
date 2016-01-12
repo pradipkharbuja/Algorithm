@@ -42,7 +42,7 @@ public class Question02 {
 			}
 		}
 
-		// System.out.println(list.toString());
+		 System.out.println(list.toString());
 
 		for (Set<Integer> set : list) {
 			int tempSum = 0;
