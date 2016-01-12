@@ -2,32 +2,54 @@ package mum.pradip;
 
 //GCD Problem
 
+/*Problem 1. GCD Algorithm. Write a Java method int gcd(int m, int n) which accepts
+positive integer inputs m, n and outputs the greatest common divisor of m and n.
+*/
+
 public class Question01 {
 
-	// Assumes m is always greater than n
-	public static void gcd(int m, int n) {
-		long startTime, endTime;
+	public static int gcd(int m, int n) {
+		if (m <= 0 || n <= 0) {
+			throw new IllegalArgumentException("Input must be greater than 0!");
+		}
 
-		startTime = System.nanoTime();
-		System.out.println("GCD: " + euclidean(m, n));
-		endTime = System.nanoTime();
+		int rem;
+		do {
+			rem = m % n;
 
-		System.out.println("Euclidean GCD Time: " + (endTime - startTime));
+			if (rem == 0) {
+				return n;
+			}
+			m = n;
+			n = rem;
+		} while (rem > 1);
+
+		return n;
 	}
 
-	public static int euclidean(int m, int n) {
-		int small = (m < n) ? m : n;
-		int big = (m >= n) ? m : n;
-
-		while(small != 0){
-			
+	public static int gcdRecursive(int m, int n) {
+		if (n == 0) {
+			return m;
 		}
-		
-		return small;
+
+		return gcdRecursive(n, m % n);
 	}
 
 	public static void main(String[] args) {
-		gcd(24, 8);
+		System.out.println("GCD: " + gcd(96, 256));
+		System.out.println("GCD: " + gcdRecursive(96, 256));
+
+		System.out.println("GCD: " + gcd(24, 17));
+		System.out.println("GCD: " + gcdRecursive(24, 17));
+
+		System.out.println("GCD: " + gcd(24, 12));
+		System.out.println("GCD: " + gcdRecursive(24, 12));
+
+		System.out.println("GCD: " + gcd(24, 8));
+		System.out.println("GCD: " + gcdRecursive(24, 8));
+
+		System.out.println("GCD: " + gcd(585, 7425));
+		System.out.println("GCD: " + gcdRecursive(585, 7425));
 	}
 
 }
