@@ -5,8 +5,7 @@ public class Question13 {
 	public static void countZeroOne(int[] array) {
 		int count0, count1;
 		count0 = 0;
-		count1 = 0;
-
+		
 		// Checking number of loops
 		int numOfLoops = 0;
 
