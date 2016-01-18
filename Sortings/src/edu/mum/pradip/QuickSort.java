@@ -9,23 +9,21 @@ public class QuickSort {
 
 	public static int partition(List<Person> listPerson, int left, int right) {
 		int i = left, j = right;
-		Person pivot = listPerson.get((left + right) / 2);
+		Person pivotPerson = listPerson.get((left + right) / 2);
 
 		while (i <= j) {
-			while (listPerson.get(i).getId() < pivot.getId()) {
+			while (listPerson.get(i).getId() < pivotPerson.getId()) {
 				i++;
 			}
-			while (listPerson.get(j).getId() > pivot.getId()) {
+			while (listPerson.get(j).getId() > pivotPerson.getId()) {
 				j--;
 			}
 
-			if (i <= j) {
-				pivot = listPerson.get(i);
-				listPerson.set(i, listPerson.get(j));
-				listPerson.set(j, pivot);
-				i++;
-				j--;
-			}
+			Person pivot = listPerson.get(i);
+			listPerson.set(i, listPerson.get(j));
+			listPerson.set(j, pivot);
+			i++;
+			j--;
 		}
 		return i;
 	}
@@ -34,11 +32,9 @@ public class QuickSort {
 		int index = partition(listPerson, left, right);
 		if (left < index - 1) {
 			doQuickSort(listPerson, left, index - 1);
-			System.out.println("Left: " + listPerson);
 		}
 		if (index < right) {
 			doQuickSort(listPerson, index, right);
-			System.out.println("Right: " + listPerson);
 		}
 	}
 
@@ -46,7 +42,7 @@ public class QuickSort {
 		List<Person> listPerson = new ArrayList<>();
 		listPerson.add(new Person(10, "Mark"));
 		listPerson.add(new Person(10, "Emily"));
-		listPerson.add(new Person(1, "Steve"));
+		listPerson.add(new Person(10, "Steve"));
 		listPerson.add(new Person(5, "Bill"));
 
 		System.out.println(listPerson);
@@ -54,7 +50,6 @@ public class QuickSort {
 
 		doQuickSort(listPerson, 0, listPerson.size() - 1);
 
-		System.out.println();
 		System.out.println(listPerson);
 	}
 }
