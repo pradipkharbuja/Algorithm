@@ -20,7 +20,7 @@ public class SelectionSort {
 			Person min = personList.get(i);
 			int minIndex = i;
 			for (int j = i; j < personList.size(); j++) {
-				if (min.getAge() >= personList.get(j).getAge()) {
+				if (min.getAge() > personList.get(j).getAge()) {
 					min = personList.get(j);
 					minIndex = j;
 				}

@@ -41,7 +41,5 @@ public class SelectionSort {
 
 		time = endTime - startTime;
 		System.out.println("Time taken: " + time / 1000);
-
 	}
-
 }
