@@ -21,18 +21,21 @@ public class Question01 {
 		long startTime;
 		
 		Collections.copy(personList, list);
+		System.out.println("Before sorting: " + personList);
 		startTime = System.nanoTime();		
 		System.out.println("After sorting: " +new BubbleSort(personList).doSort());
 		System.out.println("Time Elapsed: " + (System.nanoTime() - startTime) / 1000);
 		System.out.println();
 		
 		Collections.copy(personList, list);
+		System.out.println("Before sorting: " + personList);
 		startTime = System.nanoTime();		
 		System.out.println("After sorting: " +new SelectionSort(personList).doSort());
 		System.out.println("Time Elapsed: " + (System.nanoTime() - startTime) / 1000);
 		System.out.println();
 		
 		Collections.copy(personList, list);
+		System.out.println("Before sorting: " + personList);
 		startTime = System.nanoTime();		
 		System.out.println("After sorting: " +new InsertionSort(personList).doSort());
 		System.out.println("Time Elapsed: " + (System.nanoTime() - startTime) / 1000);

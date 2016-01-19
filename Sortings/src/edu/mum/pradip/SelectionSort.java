@@ -2,7 +2,6 @@ package edu.mum.pradip;
 
 import java.util.Arrays;
 
-import edu.mum.pradip.libs.RandomIntegerList;
 import edu.mum.pradip.libs.Utils;
 
 public class SelectionSort {
@@ -28,7 +27,7 @@ public class SelectionSort {
 	}
 
 	public static void main(String[] args) {
-		int[] array = RandomIntegerList.generate(5);
+		int[] array = Utils.generateRandom(5);
 		long startTime, endTime, time;
 
 		System.out.println(Arrays.toString(array));
